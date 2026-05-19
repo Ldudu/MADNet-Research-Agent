@@ -9,8 +9,10 @@ Recommended order:
 1. Read `README.md` for the project positioning and pain point.
 2. Read `docs/PROJECT_HIGHLIGHTS.md` for the reviewer summary.
 3. Read `docs/ARCHITECTURE.md` for the multi-agent workflow.
-4. Run the local demo to generate a report and trace.
-5. Inspect `.github/workflows/demo.yml` to confirm the demo is CI-friendly.
+4. Read `docs/DESIGN_CN.md` for the Chinese design explanation.
+5. Inspect `tests/` and `data/research_questions.json` to verify code depth beyond the demo shell.
+6. Run the local demo to generate a report and trace.
+7. Inspect `.github/workflows/demo.yml` to confirm the demo is CI-friendly.
 
 ## Local run
 
@@ -22,10 +24,12 @@ Expected outputs:
 
 - `outputs/latest_report.md`
 - `outputs/latest_trace.json`
+- `outputs/latest_summary.json`
 
 If a reviewer does not want to run the demo locally, they can inspect:
 
 - `outputs/example_report.md`
+- `outputs/example_summary.json`
 - `outputs/example_trace.json`
 
 ## What the demo proves
