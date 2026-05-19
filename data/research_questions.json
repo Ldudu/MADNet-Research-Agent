@@ -1,0 +1,17 @@
+[
+  {
+    "id": "rq-001",
+    "question": "What are the main open issues in remote sensing VSR?",
+    "focus": ["open problems", "benchmark", "degradation"]
+  },
+  {
+    "id": "rq-002",
+    "question": "How do current methods handle real-world degradation mismatch?",
+    "focus": ["real-world", "degradation", "generalization"]
+  },
+  {
+    "id": "rq-003",
+    "question": "What tradeoffs exist between lightweight VSR models and detail recovery?",
+    "focus": ["efficiency", "edge deployment", "small targets"]
+  }
+]
