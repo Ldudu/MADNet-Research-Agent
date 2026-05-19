@@ -149,6 +149,7 @@ class WriterAgent:
         evidence: Iterable[PaperNote],
         analysis: dict[str, object],
         critique: dict[str, object],
+        evaluation: dict[str, object],
     ) -> dict[str, object]:
         evidence_rows = []
         for paper in evidence:
@@ -182,6 +183,11 @@ class WriterAgent:
                 "## Critic Review",
                 *[f"- {item}" for item in critique["blind_spots"]],
                 "",
+                "## Evaluation",
+                f"- Coverage score: {evaluation['coverage_score']}",
+                f"- Evidence count: {evaluation['evidence_count']}",
+                f"- Summary: {evaluation['summary']}",
+                "",
                 "## Risks",
                 *[f"- {item}" for item in critique["risks"]],
                 "",
@@ -195,5 +201,13 @@ class WriterAgent:
             "evidence": [asdict(paper) for paper in evidence],
             "analysis": analysis,
             "critique": critique,
+            "evaluation": evaluation,
         }
-        return {"report": report, "trace": trace}
+        summary = {
+            "question": question,
+            "coverage_score": evaluation["coverage_score"],
+            "evidence_count": evaluation["evidence_count"],
+            "top_risks": critique["risks"],
+            "blind_spots": critique["blind_spots"],
+        }
+        return {"report": report, "trace": trace, "summary": summary}
