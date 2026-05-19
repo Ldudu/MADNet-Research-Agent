@@ -156,5 +156,17 @@
       "The degradation recipe is still synthetic, so real-world transfer remains weak.",
       "Performance drops on long clips with abrupt scene change."
     ]
+  },
+  "evaluation": {
+    "coverage_score": 1.0,
+    "evidence_count": 4,
+    "dimension_coverage": {
+      "method": true,
+      "degradation": true,
+      "dataset": true,
+      "metric": true,
+      "limitation": true
+    },
+    "summary": "Coverage is broad enough for a first-pass synthesis."
   }
 }
