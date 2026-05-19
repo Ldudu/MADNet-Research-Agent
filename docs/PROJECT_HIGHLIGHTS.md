@@ -27,11 +27,15 @@ MADNet Research Agent is a multi-agent research assistant prototype for remote s
 - It demonstrates multi-agent collaboration with state handoff.
 - It produces inspectable outputs instead of only a final answer.
 - It is structured for verification, not just presentation.
+- It includes prompts, evaluation logic, sample questions, and tests, so the repository has visible engineering depth.
 
 ## Review entry points
 
 - `README.md`
 - `docs/ARCHITECTURE.md`
+- `docs/DESIGN_CN.md`
 - `docs/MIMO_APPLICATION_TEXT.md`
+- `tests/test_workflow.py`
 - `outputs/example_report.md`
+- `outputs/example_summary.json`
 - `outputs/example_trace.json`
