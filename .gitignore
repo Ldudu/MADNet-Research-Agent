@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+outputs/latest_report.md
+outputs/latest_trace.json
