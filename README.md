@@ -7,6 +7,7 @@ MADNet Research Agent is a verification-friendly multi-agent research assistant 
 This project targets a common research bottleneck in remote sensing VSR: papers, degradation assumptions, datasets, and metrics are scattered, which makes synthesis slow, repetitive, and difficult to validate. The system addresses that by converting a manual research loop into an auditable multi-agent workflow with explicit intermediate state.
 
 Chinese design notes are documented in [docs/DESIGN_CN.md](docs/DESIGN_CN.md).
+An end-to-end scenario walkthrough is available in [docs/CASE_STUDY.md](docs/CASE_STUDY.md).
 
 ## Core Pain Point
 
@@ -48,6 +49,7 @@ This design is more suitable for research scenarios than a single one-shot answe
 - The project includes both source code and example reasoning outputs.
 - The CI workflow can be used as a lightweight reproducibility hook.
 - The expanded codebase now includes state models, evaluation, prompts, sample questions, and tests.
+- The repository also includes configuration, interface abstractions, example requests, and export helpers.
 
 ## MIMO-Oriented Summary
 
@@ -65,21 +67,29 @@ The direct application text is available in [docs/MIMO_APPLICATION_TEXT.md](docs
 ```text
 .
 |-- .github/workflows/demo.yml
+|-- configs/default_config.json
 |-- data/sample_corpus.json
+|-- examples/sample_request.md
 |-- docs/
 |   |-- ARCHITECTURE.md
+|   |-- CASE_STUDY.md
 |   |-- DESIGN_CN.md
 |   |-- MIMO_APPLICATION_TEXT.md
 |   |-- PROJECT_HIGHLIGHTS.md
+|   |-- REPOSITORY_MAP.md
 |   |-- ROADMAP.md
 |   `-- VERIFICATION.md
 |-- madnet_research_agent/
 |   |-- __init__.py
 |   |-- agents.py
+|   |-- config.py
 |   |-- corpus.py
 |   |-- cli.py
 |   |-- evaluation.py
+|   |-- exporters.py
+|   |-- interfaces.py
 |   |-- models.py
+|   |-- orchestrator.py
 |   |-- prompts.py
 |   |-- reporting.py
 |   `-- workflow.py
@@ -115,13 +125,14 @@ The repository also includes reviewer-friendly reference artifacts:
 
 ## Verification
 
-Reviewers can verify the project in four steps:
+Reviewers can verify the project in several steps:
 
 1. Read [docs/PROJECT_HIGHLIGHTS.md](docs/PROJECT_HIGHLIGHTS.md) for a concise project summary.
 2. Read [docs/DESIGN_CN.md](docs/DESIGN_CN.md) or [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the design.
 3. Read [docs/MIMO_APPLICATION_TEXT.md](docs/MIMO_APPLICATION_TEXT.md) for the application-ready wording.
-4. Inspect `tests/` and `data/research_questions.json` to see that the project is more than a one-file demo.
-5. Run the demo locally or inspect `.github/workflows/demo.yml`.
+4. Read [docs/CASE_STUDY.md](docs/CASE_STUDY.md) and [docs/REPOSITORY_MAP.md](docs/REPOSITORY_MAP.md) for concrete usage and structure.
+5. Inspect `tests/`, `configs/default_config.json`, and `data/research_questions.json` to see that the project is more than a one-file demo.
+6. Run the demo locally or inspect `.github/workflows/demo.yml`.
 
 Detailed verification instructions are documented in [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
