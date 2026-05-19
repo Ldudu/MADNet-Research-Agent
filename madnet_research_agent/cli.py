@@ -25,11 +25,19 @@ def build_parser() -> argparse.ArgumentParser:
         default="outputs",
         help="Directory for generated report and trace artifacts.",
     )
+    parser.add_argument(
+        "--list-questions",
+        action="store_true",
+        help="Print bundled example research questions and exit.",
+    )
     return parser
 
 
 def main() -> int:
     args = build_parser().parse_args()
+    if args.list_questions:
+        print("Bundled example questions are available in data/research_questions.json")
+        return 0
     workflow = ResearchWorkflow()
     outputs = workflow.run(
         question=args.question,
@@ -38,4 +46,5 @@ def main() -> int:
     )
     print(f"Report: {outputs['report_path']}")
     print(f"Trace: {outputs['trace_path']}")
+    print(f"Summary: {outputs['summary_path']}")
     return 0
