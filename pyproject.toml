@@ -1,0 +1,12 @@
+[project]
+name = "madnet-research-agent"
+version = "0.1.0"
+description = "Verification-friendly multi-agent prototype for remote sensing VSR research."
+requires-python = ">=3.11"
+readme = "README.md"
+authors = [
+  { name = "Ldudu" }
+]
+
+[project.scripts]
+madnet-agent = "madnet_research_agent.cli:main"
