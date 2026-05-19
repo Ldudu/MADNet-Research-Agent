@@ -1,0 +1,160 @@
+{
+  "question": "What are the open issues in remote sensing VSR?",
+  "plan": {
+    "normalized_question": "What are the open issues in remote sensing VSR?",
+    "sub_goals": [
+      "identify dominant modeling themes",
+      "compare evaluation and dataset assumptions",
+      "surface unresolved limitations and open issues"
+    ],
+    "focus_dimensions": [
+      "method",
+      "degradation",
+      "dataset",
+      "metric",
+      "limitation"
+    ]
+  },
+  "evidence": [
+    {
+      "title": "Open problems in remote sensing video super-resolution",
+      "focus": "Summarizes unresolved challenges across degradation realism, alignment robustness, and benchmark design.",
+      "method": "Review-style synthesis of common failure modes.",
+      "datasets": [
+        "RS-VSRBench",
+        "FlightSet-Real"
+      ],
+      "metrics": [
+        "PSNR",
+        "SSIM",
+        "Perceptual Quality"
+      ],
+      "limitations": "The survey highlights problems but does not propose a unified solution.",
+      "tags": [
+        "survey",
+        "open problems",
+        "benchmark",
+        "real-world",
+        "remote sensing",
+        "vsr"
+      ]
+    },
+    {
+      "title": "Benchmarking remote sensing VSR evaluation protocols",
+      "focus": "Compares evaluation setups across satellite and aerial video benchmarks.",
+      "method": "Standardizes train-test splits, metrics, and downsampling assumptions.",
+      "datasets": [
+        "GeoVideo-Sim",
+        "AeroTrack-32",
+        "RS-VSRBench"
+      ],
+      "metrics": [
+        "PSNR",
+        "SSIM",
+        "LPIPS",
+        "NIQE"
+      ],
+      "limitations": "Benchmark coverage is still narrow for cloud, haze, and low-light conditions.",
+      "tags": [
+        "benchmark",
+        "evaluation",
+        "datasets",
+        "metrics",
+        "remote sensing",
+        "vsr"
+      ]
+    },
+    {
+      "title": "Motion-aware degradation modeling for remote sensing VSR",
+      "focus": "Jointly models blur, aliasing, jitter, and compression instead of assuming clean bicubic downsampling.",
+      "method": "Estimate composite degradation first, then perform temporally aligned restoration.",
+      "datasets": [
+        "Synthetic-SatVSR",
+        "OrbitClip-24"
+      ],
+      "metrics": [
+        "PSNR",
+        "SSIM",
+        "LPIPS"
+      ],
+      "limitations": "The degradation recipe is still synthetic, so real-world transfer remains weak.",
+      "tags": [
+        "remote sensing",
+        "vsr",
+        "degradation",
+        "alignment",
+        "real-world gap"
+      ]
+    },
+    {
+      "title": "Temporal alignment under satellite viewpoint drift",
+      "focus": "Studies temporal alignment failure when camera motion and target motion coexist.",
+      "method": "Uses drift-robust temporal fusion before upsampling.",
+      "datasets": [
+        "OrbitClip-24",
+        "GeoVideo-Sim"
+      ],
+      "metrics": [
+        "PSNR",
+        "tOF",
+        "Warp Error"
+      ],
+      "limitations": "Performance drops on long clips with abrupt scene change.",
+      "tags": [
+        "remote sensing",
+        "vsr",
+        "temporal alignment",
+        "motion",
+        "fusion"
+      ]
+    }
+  ],
+  "analysis": {
+    "findings": [
+      "Open problems in remote sensing video super-resolution: Summarizes unresolved challenges across degradation realism, alignment robustness, and benchmark design.",
+      "Benchmarking remote sensing VSR evaluation protocols: Compares evaluation setups across satellite and aerial video benchmarks.",
+      "Motion-aware degradation modeling for remote sensing VSR: Jointly models blur, aliasing, jitter, and compression instead of assuming clean bicubic downsampling.",
+      "Temporal alignment under satellite viewpoint drift: Studies temporal alignment failure when camera motion and target motion coexist.",
+      "Most evidence emphasizes degradation realism, temporal alignment, and benchmark comparability as central research bottlenecks."
+    ],
+    "datasets": [
+      "AeroTrack-32",
+      "FlightSet-Real",
+      "GeoVideo-Sim",
+      "OrbitClip-24",
+      "RS-VSRBench",
+      "Synthetic-SatVSR"
+    ],
+    "metrics": [
+      "LPIPS",
+      "NIQE",
+      "PSNR",
+      "Perceptual Quality",
+      "SSIM",
+      "Warp Error",
+      "tOF"
+    ],
+    "limitation_signals": [
+      "The survey highlights problems but does not propose a unified solution.",
+      "Benchmark coverage is still narrow for cloud, haze, and low-light conditions.",
+      "The degradation recipe is still synthetic, so real-world transfer remains weak.",
+      "Performance drops on long clips with abrupt scene change."
+    ]
+  },
+  "critique": {
+    "review_target": "What are the open issues in remote sensing VSR?",
+    "blind_spots": [
+      "Evidence covers the major themes, but unified evaluation protocols and real-world validation remain incomplete."
+    ],
+    "risks": [
+      "The sample corpus is illustrative and should be replaced with real paper notes for production use.",
+      "A high-level synthesis can still overfit to the retrieved shortlist if recall is poor."
+    ],
+    "limitation_signals": [
+      "The survey highlights problems but does not propose a unified solution.",
+      "Benchmark coverage is still narrow for cloud, haze, and low-light conditions.",
+      "The degradation recipe is still synthetic, so real-world transfer remains weak.",
+      "Performance drops on long clips with abrupt scene change."
+    ]
+  }
+}
