@@ -25,6 +25,11 @@ What are the open issues in remote sensing VSR?
 ## Critic Review
 - Evidence covers the major themes, but unified evaluation protocols and real-world validation remain incomplete.
 
+## Evaluation
+- Coverage score: 1.0
+- Evidence count: 4
+- Summary: Coverage is broad enough for a first-pass synthesis.
+
 ## Risks
 - The sample corpus is illustrative and should be replaced with real paper notes for production use.
 - A high-level synthesis can still overfit to the retrieved shortlist if recall is poor.
