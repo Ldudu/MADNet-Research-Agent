@@ -7,9 +7,10 @@ This repository is intended to be easy for a reviewer to inspect.
 Recommended order:
 
 1. Read `README.md` for the project positioning and pain point.
-2. Read `docs/ARCHITECTURE.md` for the multi-agent workflow.
-3. Run the local demo to generate a report and trace.
-4. Inspect `.github/workflows/demo.yml` to confirm the demo is CI-friendly.
+2. Read `docs/PROJECT_HIGHLIGHTS.md` for the reviewer summary.
+3. Read `docs/ARCHITECTURE.md` for the multi-agent workflow.
+4. Run the local demo to generate a report and trace.
+5. Inspect `.github/workflows/demo.yml` to confirm the demo is CI-friendly.
 
 ## Local run
 
