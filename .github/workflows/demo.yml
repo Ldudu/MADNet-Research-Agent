@@ -1,0 +1,28 @@
+name: demo
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run demo
+        run: python main.py --question "What are the open issues in remote sensing VSR?"
+
+      - name: Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: madnet-demo-output
+          path: outputs/
