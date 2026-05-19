@@ -4,13 +4,9 @@ MADNet Research Agent is a verification-friendly multi-agent research assistant 
 
 ## Project Snapshot
 
-### Chinese
-
-这是一个面向遥感视频超分研究的多 Agent 助手原型，重点解决论文检索分散、实验设定难比较、证据归纳低效且结论难复核的问题。项目采用 `Planner -> Retriever -> Analyst -> Critic -> Writer` 的长链推理工作流，把“找资料、比方法、做归纳、查漏洞、写结论”拆成可审查的多阶段 Agent 协作流程。
-
-### English
-
 This project targets a common research bottleneck in remote sensing VSR: papers, degradation assumptions, datasets, and metrics are scattered, which makes synthesis slow, repetitive, and difficult to validate. The system addresses that by converting a manual research loop into an auditable multi-agent workflow with explicit intermediate state.
+
+Chinese design notes are documented in [docs/DESIGN_CN.md](docs/DESIGN_CN.md).
 
 ## Core Pain Point
 
@@ -51,6 +47,7 @@ This design is more suitable for research scenarios than a single one-shot answe
 - The agent workflow is separated into auditable stages instead of one opaque response.
 - The project includes both source code and example reasoning outputs.
 - The CI workflow can be used as a lightweight reproducibility hook.
+- The expanded codebase now includes state models, evaluation, prompts, sample questions, and tests.
 
 ## MIMO-Oriented Summary
 
@@ -71,18 +68,29 @@ The direct application text is available in [docs/MIMO_APPLICATION_TEXT.md](docs
 |-- data/sample_corpus.json
 |-- docs/
 |   |-- ARCHITECTURE.md
+|   |-- DESIGN_CN.md
 |   |-- MIMO_APPLICATION_TEXT.md
 |   |-- PROJECT_HIGHLIGHTS.md
+|   |-- ROADMAP.md
 |   `-- VERIFICATION.md
 |-- madnet_research_agent/
 |   |-- __init__.py
 |   |-- agents.py
+|   |-- corpus.py
 |   |-- cli.py
+|   |-- evaluation.py
+|   |-- models.py
+|   |-- prompts.py
+|   |-- reporting.py
 |   `-- workflow.py
 |-- main.py
 |-- outputs/
 |   |-- example_report.md
+|   |-- example_summary.json
 |   `-- example_trace.json
+|-- tests/
+|   |-- test_agents.py
+|   `-- test_workflow.py
 `-- pyproject.toml
 ```
 
@@ -102,6 +110,7 @@ After running, the project writes:
 The repository also includes reviewer-friendly reference artifacts:
 
 - `outputs/example_report.md`
+- `outputs/example_summary.json`
 - `outputs/example_trace.json`
 
 ## Verification
@@ -109,9 +118,10 @@ The repository also includes reviewer-friendly reference artifacts:
 Reviewers can verify the project in four steps:
 
 1. Read [docs/PROJECT_HIGHLIGHTS.md](docs/PROJECT_HIGHLIGHTS.md) for a concise project summary.
-2. Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the multi-agent reasoning design.
+2. Read [docs/DESIGN_CN.md](docs/DESIGN_CN.md) or [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the design.
 3. Read [docs/MIMO_APPLICATION_TEXT.md](docs/MIMO_APPLICATION_TEXT.md) for the application-ready wording.
-4. Run the demo locally or inspect `.github/workflows/demo.yml`.
+4. Inspect `tests/` and `data/research_questions.json` to see that the project is more than a one-file demo.
+5. Run the demo locally or inspect `.github/workflows/demo.yml`.
 
 Detailed verification instructions are documented in [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
