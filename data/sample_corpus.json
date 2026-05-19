@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Motion-aware degradation modeling for remote sensing VSR",
+    "focus": "Jointly models blur, aliasing, jitter, and compression instead of assuming clean bicubic downsampling.",
+    "method": "Estimate composite degradation first, then perform temporally aligned restoration.",
+    "datasets": ["Synthetic-SatVSR", "OrbitClip-24"],
+    "metrics": ["PSNR", "SSIM", "LPIPS"],
+    "limitations": "The degradation recipe is still synthetic, so real-world transfer remains weak.",
+    "tags": ["remote sensing", "vsr", "degradation", "alignment", "real-world gap"]
+  },
+  {
+    "title": "Temporal alignment under satellite viewpoint drift",
+    "focus": "Studies temporal alignment failure when camera motion and target motion coexist.",
+    "method": "Uses drift-robust temporal fusion before upsampling.",
+    "datasets": ["OrbitClip-24", "GeoVideo-Sim"],
+    "metrics": ["PSNR", "tOF", "Warp Error"],
+    "limitations": "Performance drops on long clips with abrupt scene change.",
+    "tags": ["remote sensing", "vsr", "temporal alignment", "motion", "fusion"]
+  },
+  {
+    "title": "Benchmarking remote sensing VSR evaluation protocols",
+    "focus": "Compares evaluation setups across satellite and aerial video benchmarks.",
+    "method": "Standardizes train-test splits, metrics, and downsampling assumptions.",
+    "datasets": ["GeoVideo-Sim", "AeroTrack-32", "RS-VSRBench"],
+    "metrics": ["PSNR", "SSIM", "LPIPS", "NIQE"],
+    "limitations": "Benchmark coverage is still narrow for cloud, haze, and low-light conditions.",
+    "tags": ["benchmark", "evaluation", "datasets", "metrics", "remote sensing", "vsr"]
+  },
+  {
+    "title": "Real-world degradation gaps in aerial video restoration",
+    "focus": "Analyzes mismatch between synthetic degradations and flight-collected video.",
+    "method": "Builds a taxonomy of blur, compression, rolling shutter, and atmospheric distortion.",
+    "datasets": ["FlightSet-Real", "AeroTrack-32"],
+    "metrics": ["NIQE", "MUSIQ", "Human Preference"],
+    "limitations": "No unified protocol is provided for cross-paper comparison.",
+    "tags": ["real-world", "degradation", "aerial", "evaluation", "gap"]
+  },
+  {
+    "title": "Lightweight VSR backbones for edge deployment",
+    "focus": "Explores efficiency-accuracy tradeoffs for onboard or edge-side restoration.",
+    "method": "Distills a compact temporal SR backbone with reduced memory pressure.",
+    "datasets": ["RS-VSRBench", "OrbitClip-24"],
+    "metrics": ["PSNR", "FPS", "Memory"],
+    "limitations": "Efficiency gains are clear, but recovery of tiny targets is weaker.",
+    "tags": ["efficiency", "edge", "deployment", "remote sensing", "vsr"]
+  },
+  {
+    "title": "Open problems in remote sensing video super-resolution",
+    "focus": "Summarizes unresolved challenges across degradation realism, alignment robustness, and benchmark design.",
+    "method": "Review-style synthesis of common failure modes.",
+    "datasets": ["RS-VSRBench", "FlightSet-Real"],
+    "metrics": ["PSNR", "SSIM", "Perceptual Quality"],
+    "limitations": "The survey highlights problems but does not propose a unified solution.",
+    "tags": ["survey", "open problems", "benchmark", "real-world", "remote sensing", "vsr"]
+  }
+]
