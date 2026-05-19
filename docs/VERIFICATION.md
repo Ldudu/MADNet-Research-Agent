@@ -10,9 +10,10 @@ Recommended order:
 2. Read `docs/PROJECT_HIGHLIGHTS.md` for the reviewer summary.
 3. Read `docs/ARCHITECTURE.md` for the multi-agent workflow.
 4. Read `docs/DESIGN_CN.md` for the Chinese design explanation.
-5. Inspect `tests/` and `data/research_questions.json` to verify code depth beyond the demo shell.
-6. Run the local demo to generate a report and trace.
-7. Inspect `.github/workflows/demo.yml` to confirm the demo is CI-friendly.
+5. Read `docs/CASE_STUDY.md` and `docs/REPOSITORY_MAP.md` to understand the project in a concrete way.
+6. Inspect `tests/`, `configs/default_config.json`, and `data/research_questions.json` to verify code depth beyond the demo shell.
+7. Run the local demo to generate a report and trace.
+8. Inspect `.github/workflows/demo.yml` to confirm the demo is CI-friendly.
 
 ## Local run
 
