@@ -1,0 +1,21 @@
+{
+  "project_name": "MADNet Research Agent",
+  "domain": "remote sensing video super-resolution",
+  "top_k_evidence": 4,
+  "focus_dimensions": [
+    "method",
+    "degradation",
+    "dataset",
+    "metric",
+    "limitation"
+  ],
+  "output_formats": [
+    "markdown",
+    "json"
+  ],
+  "critique_policy": {
+    "require_blind_spot_check": true,
+    "require_risk_section": true,
+    "require_trace_output": true
+  }
+}
